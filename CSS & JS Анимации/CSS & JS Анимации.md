@@ -66,61 +66,47 @@ CSStransition применяются ко всем элементам, в том
 
 4 свойства для проставления анимации:
 
-
-
+![](sources/1.png)
+![](sources/2.png)
+![](sources/3.png)
+![](sources/4.png)
 С чего начать делать анимацию?
 
 1. Найти все элементы для анимации
 
-.link {}
+`.link {}`
 
 1. Указать свойство для анимации
 
-.link {
+`.link {
+transition-property:  opacity, background-color;
+}`
 
-**transition-property:**  **opacity****, **** background ****-**** color ****;**
-
-}
-
-1. Указать время выполнения анимации
-
-.link {
-
+2. Указать время выполнения анимации
+`.link 
+{
 transition-property: opacity, background-color;
+transition-duration: 0.3s
+}`
 
-**transition-duration****: **** 0.3s ****;**
-
-}
-
-1. Указать временную функцию
-
-.link {
-
+3. Указать временную функцию
+`.link {
 transition-property: opacity, background-color; transition-duration: 0.3s;
-
-**transition-timing-function****: ease;**
-
-}
-
-1. Указать продолжительность ожидания перед запуском
-
-.link {
-
-transition-property: opacity, background-color; transition-duration: 0.3s;
-
 transition-timing-function: ease;
+}`
 
-**transition-delay****: **** 0.1s ****;**}
 
-1. Задать триггер для перехода
+4. Указать продолжительность ожидания перед запуском
+`.link {
+transition-property: opacity, background-color; transition-duration: 0.3s;
+transition-timing-function: ease;
+transition-delay: 0.1s}`
 
-.link **:hover**{
-
+5. Задать триггер для перехода
+`.link:hover{
 opacity: 0.6;
-
 background-color: purple;
-
-}
+}`
 
 Принципы анимации
 
@@ -146,9 +132,9 @@ transition-timing-function
 
 **Гладкие временные функции**
 
-![](RackMultipart20240227-1-jq09ku_html_529e895189dac183.png)
+![](sources/5.png)
 
-![](RackMultipart20240227-1-jq09ku_html_33b5cae618b336cf.png)
+![](sources/6.png)
 
 Частые ошибки при создании простых анимаций
 
@@ -158,7 +144,7 @@ transition-timing-function
 
 - При использовании псевдокласса :hover мы не должны забывать о состоянии :focus.
 
-![](RackMultipart20240227-1-jq09ku_html_b64ec4798bd1ff8c.png)
+![](sources/7.png)
 
 [
 # Ссылка на курс
