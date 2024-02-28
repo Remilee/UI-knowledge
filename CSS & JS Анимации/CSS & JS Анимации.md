@@ -200,22 +200,54 @@ Clip-path позволяет обрезать видимую область бл
 
 Для css-переходов transition:
 
-transitionstart — событие начала проигрывания анимации;
-
-transitionrun — событие процесса проигрывания анимации;
-
-transitioncancel — событие прерывания проигрывания анимации;
-
-transitionend — событие окончания проигрывания анимации.
+* transitionstart — событие начала проигрывания анимации;
+* transitionrun — событие процесса проигрывания анимации;
+* transitioncancel — событие прерывания проигрывания анимации;
+* transitionend — событие окончания проигрывания анимации.
 
 Для покадровых CSS-анимаций animation:
 
-animationstart — событие начала проигрывания анимации;
+* animationstart — событие начала проигрывания анимации;
+* animationiteration — событие проигрывания цикла анимации;
+* animationcancel — событие прерывания проигрывания анимации;
+* animationend — событие окончания проигрывания анимации.
 
-animationiteration — событие проигрывания цикла анимации;
+### Прокрутка страницы
+Узнать насколько прокрутили по вертикали:
+`console.log(window.pageYOffset);`
+По горизонтали:
+`console.log(window.scrollX);`
 
-animationcancel — событие прерывания проигрывания анимации;
+### Размер документа
+Узнать размер документа
+`document.documentElement.offsetHeight // высота документа`
+`document.documentElement.scrollHeight // тоже высота документа`
+Узнать размер области просмотра
+`document.documentElement.clientWidth // вернёт ширину области просмотра без учёта ширины полосы прокрутки`
 
-animationend — событие окончания проигрывания анимации.
+### Координаты и размер элемента
+`element.getBoundingClientRect()`
+![](sources/12.jpg)
 
-https://up.htmlacademy.ru/animation-basics/1/module/4/item/2
+Чтобы найти ширину элемента, можно использовать:
+`element.getBoundingClientRect().width` — вернёт дробное значение ширины элемента, включая padding и border.
+
+`element.offsetWidth` — вернёт целочисленную ширину элемента, включая padding и border.
+
+`element.clientWidth` — вернёт целочисленную ширину элемента, включая padding, но не border, для строчных элементов вернёт 0.
+
+### Методы окна для прокрутки страницы
+`window.scrollTo(Х, Y);
+window.scroll(Х, Y);`
+
+`window.scrollBy(X, Y);` - прокручивание на указанное количество пикселей
+
+Плавность прокрутки: добавление правила `behavior: "smooth"`: 
+`window.scrollBy({
+top: 100,
+left: 0,
+behavior: "smooth"
+});`
+
+### Методы элементов для прокрутки страницы
+`element.scrollIntoView()` прокручивает контейнер родителя таким образом, чтобы пользователь видел этот элемент. 
