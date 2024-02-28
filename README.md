@@ -1,5 +1,4 @@
 # UI-knowledge
-![where's your code projects]([sources/Frame 8.png](https://github.com/Remilee/UI-knowledge/blob/main/sources/Frame%208.png))
 
 in this repository I'll share something notes about ui, ux and web development
 
